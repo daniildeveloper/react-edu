@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js')
+    //-was bug with minified version
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js') 
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js')
+    
+  body
+    block content
+    
+    .footer
+    script(src='javascripts/main.js', type='text/babel', async)
