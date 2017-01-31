@@ -1,6 +1,24 @@
 //create class
 var Greeter = React.createClass({
+  
+    //built in function to setup default values
+    getDefaultProps: function () {
+      return {
+        name: 'React',
+        message: 'React message'
+      }
+    },
     
+    getInitialState: function () {
+      return {
+        name: this.props.name
+      }
+    },
+    
+    /**
+     * works on button is clicked
+     *
+     */
     onButtonClick: function (e) {
      e.preventDefault(); 
      
@@ -8,16 +26,23 @@ var Greeter = React.createClass({
     // чтобы получить значение нужно использовать value
      var name = this.refs.name.value;
      
-     alert(name);
+     //update the state. So to rerender it
+     this.setState({
+       name: name
+     });
     },
+    
+
   
     render: function () {
-      var name = this.props.name;
+      var name = this.state.name;
+      var message = this.props.message;
         return (
           
             <div>
               <h1> Hellp React </h1>
               <p> {name} </p>
+              <p> {message} </p>
               
               <form onSubmit={this.onButtonClick}>
                 <input type='text' ref="name"/>
