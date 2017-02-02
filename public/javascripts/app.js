@@ -1,5 +1,1 @@
-function greeter () {
-    document.write('from greeter function');
-}
-
-greeter();
+var jsx = require('./main.jsx')
