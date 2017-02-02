@@ -27,7 +27,6 @@ var GreeterForm = React.createClass({
           <input type='text' ref="name"/>
           <button>Set name </button>
         </form>
-        
       );
   }
 });
