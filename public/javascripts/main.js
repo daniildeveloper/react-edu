@@ -10,9 +10,20 @@ var GreeterMessage = React.createClass({
 });
 
 var GreeterForm = React.createClass({
+  onFormSubmit: function (e) {
+   e.preventDefault();//prevent browser from refreshing
+   
+  // get name
+   var name = this.refs.name.value;
+   
+   if (name.length > 0) {
+     this.refs.name.value = '';
+     this.props.onNewName(name);
+   }
+  },
   render: function () {
     return (
-        <form>
+        <form onSubmit={this.onFormSubmit}>
           <input type='text' ref="name"/>
           <button>Set name </button>
         </form>
@@ -42,17 +53,10 @@ var Greeter = React.createClass({
      * works on button is clicked
      *
      */
-    onButtonClick: function (e) {
-     e.preventDefault(); 
-     
-    // refs - элементы с атрибутом ref. 
-    // чтобы получить значение нужно использовать value
-     var name = this.refs.name.value;
-     
-     //update the state. So to rerender it
+    handleNewName: function (name) {
      this.setState({
        name: name
-     });
+     })
     },
     
     /**
@@ -71,7 +75,7 @@ var Greeter = React.createClass({
               
               <GreeterMessage/>
               
-              <GreeterForm/>
+              <GreeterForm onNewName={this.handleNewName}/>
             </div>    
         );
     }, 
