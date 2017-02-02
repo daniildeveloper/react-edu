@@ -1,5 +1,5 @@
 {
-  "name": "workspace",
+  "name": "reactedu",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -12,13 +12,20 @@
     "express": "~4.14.0",
     "morgan": "~1.7.0",
     "pug": "~2.0.0-beta6",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2016": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
     "eslint": "^3.14.1",
     "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.9.0"
+    "eslint-plugin-react": "^6.9.0",
+    "webpack": "^2.2.1"
   }
 }
